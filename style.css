@@ -1,0 +1,501 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff5fa;
+    color: #765875;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* PIN LOCK */
+
+.lock-screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe3ef, #eee5ff);
+}
+
+.lock-card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px #d9a5c655;
+}
+
+.bunny {
+    font-size: 65px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.lock-card h1 {
+    font: 700 32px 'Playfair Display', serif;
+    margin: 15px;
+}
+
+.lock-card p {
+    margin: 12px 0;
+    color: #a77c9e;
+}
+
+.pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px;
+}
+
+.pin-dots i {
+    width: 13px;
+    height: 13px;
+    border: 2px solid #e58db8;
+    border-radius: 50%;
+}
+
+.pin-dots i.filled {
+    background: #e58db8;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 280px;
+    margin: auto;
+}
+
+.keypad button {
+    padding: 15px;
+    border: 1px solid #f1d8e8;
+    border-radius: 13px;
+    background: #fff7fb;
+    color: #875d80;
+    font-weight: bold;
+}
+
+.keypad button:hover {
+    background: #ffddeb;
+}
+
+.main-btn {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    margin-top: 20px;
+    background: linear-gradient(110deg, #ee80ae, #ad92df);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px #d78ebc66;
+}
+
+#unlockBtn {
+    width: 100%;
+}
+
+#pinError {
+    color: #d44f83;
+    min-height: 20px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #fff0f7;
+}
+
+nav h3 {
+    color: #d46c9d;
+}
+
+#musicBtn {
+    padding: 10px 15px;
+    border: 1px solid #e9b4d0;
+    border-radius: 25px;
+    background: white;
+    color: #b36a96;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 80px 8%;
+    background: linear-gradient(135deg, #fff4e9, #ffe9f3, #eeeaff);
+}
+
+.hero-text {
+    max-width: 520px;
+}
+
+.hero-text h1 {
+    font: 700 clamp(45px, 6vw, 75px) 'Playfair Display', serif;
+    margin: 20px 0;
+}
+
+.hero-text h1 span {
+    color: #e77fa9;
+    font-style: italic;
+}
+
+.hero-text h3 {
+    margin: 15px 0;
+    color: #c478a0;
+}
+
+.hero-text p {
+    line-height: 1.9;
+    color: #927b91;
+}
+
+.hero-photo {
+    width: min(350px, 90%);
+    text-align: center;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border: 12px solid white;
+    border-radius: 180px 180px 30px 30px;
+    box-shadow: 0 20px 50px #bd8ab544;
+}
+
+.hero-photo h3 {
+    margin-top: 15px;
+    color: #ce79a5;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font: 700 clamp(30px, 4vw, 48px) 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.section p {
+    line-height: 1.9;
+    color: #917b91;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    padding: 9px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 12px 30px #bd8ab533;
+    transition: .3s;
+}
+
+.gallery img:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+/* CAKE */
+
+.cake-section {
+    background: linear-gradient(135deg, #fff0f7, #f1eaff);
+}
+
+.cake {
+    position: relative;
+    width: 280px;
+    height: 230px;
+    margin: 40px auto;
+}
+
+.plate {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    width: 270px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f2cce1;
+}
+
+.cake-layer {
+    position: absolute;
+    left: 28px;
+    width: 224px;
+    border-radius: 15px;
+}
+
+.layer-one {
+    bottom: 28px;
+    height: 75px;
+    background: #f9a9ca;
+}
+
+.layer-two {
+    bottom: 100px;
+    left: 43px;
+    width: 194px;
+    height: 55px;
+    background: #fff;
+    border: 5px solid #f5a4c7;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 145px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #bd6091;
+}
+
+.candles {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 27px;
+    z-index: 3;
+}
+
+.candle {
+    width: 10px;
+    height: 42px;
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+        135deg, white 0 5px, #ed88b4 5px 10px
+    );
+}
+
+.flame {
+    position: absolute;
+    width: 9px;
+    height: 15px;
+    top: -19px;
+    left: 1px;
+    background: orange;
+    border-radius: 70% 20% 70% 20%;
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px orange;
+    animation: flicker .5s infinite alternate;
+}
+
+@keyframes flicker {
+    to {
+        transform: rotate(35deg) scale(.8);
+    }
+}
+
+.candle.out .flame {
+    display: none;
+}
+
+/* LETTERS */
+
+.letters-section {
+    background: #fffafc;
+}
+
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.letter {
+    padding: 30px;
+    background: white;
+    border: 1px solid #f0d9e8;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px #bd8ab522;
+    transition: .3s;
+}
+
+.letter:hover {
+    transform: translateY(-5px);
+}
+
+.letter h3 {
+    font: 700 22px 'Playfair Display', serif;
+    color: #c56d9a;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    color: #917b91;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* FINAL */
+
+.final {
+    background: linear-gradient(135deg, #f8edff, #fff0f6);
+    padding: 110px 20px;
+}
+
+.final h1 {
+    font: 700 clamp(35px, 5vw, 60px) 'Playfair Display', serif;
+    color: #d875a5;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #bd729c;
+    background: #ffedf5;
+}
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #bd83b4;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 30px;
+    opacity: 0;
+    transition: .3s;
+    z-index: 20;
+    text-align: center;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 30;
+    pointer-events: none;
+    animation: fall var(--duration) linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translate(var(--drift), 110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .gallery img {
+        height: 400px;
+    }
+
+    .letters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .hero-photo img {
+        height: 380px;
+    }
+}
+.smile-section {
+    text-align: center;
+    padding: 30px;
+}
+
+.smile-section h2 {
+    color: #ff4d88;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.smile-photo img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
